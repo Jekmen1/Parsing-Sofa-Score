@@ -1,10 +1,8 @@
 import requests
 import json
 
-# Define the URL for fetching all live events (current games)
 live_events_url = "https://api.sofascore.com/api/v1/sport/football/events/live"
 
-# Set up headers for the request
 headers = {
     'authority': 'api.sofascore.com',
     'accept': '*/*',
@@ -16,17 +14,14 @@ headers = {
     'referer': 'https://www.sofascore.com/',
     'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114"',
     'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"macOS"',
     'sec-fetch-dest': 'empty',
     'sec-fetch-mode': 'cors',
     'sec-fetch-site': 'same-site',
 }
 
-# Make the request to get live football events
 response = requests.get(live_events_url, headers=headers)
 print("Live Events API Status Code:", response.status_code)
 
-# Check if the request was successful
 if response.status_code == 200:
     live_events = response.json()
 
@@ -43,4 +38,3 @@ if response.status_code == 200:
         print("No live events found.")
 else:
     print("Failed to retrieve live matches.")
-# TNG Thai Nguyen U19 vs Phong Phu Ha Nam U19
